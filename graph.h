@@ -10,8 +10,6 @@
 #include <limits>
 #include "reader.h"
 
-#define NOT_CONNECTED 0
-
 class Graph {
 public:
     explicit Graph(adjacency_list_t &list);
@@ -19,10 +17,11 @@ public:
     void DFS(int startNode);
     void BFS(int startNode);
 
-    double shortestPath(int start, int end);
+    const double shortestPath(int start, int end);
 
     void print() const;
     void printVisitedNodes() const;
+    void printPath(int start, int end);
 
 private:
     template<typename T>
@@ -35,13 +34,15 @@ private:
     }
     void dijkstraNeighbours(std::pair<weight_t, node_id_t>);
 
-    std::vector<std::vector<double>> matrix;
+    const double INF;
 
+    //Containers
+    std::vector<std::vector<double>> matrix;
     adjacency_list_t list;
-    std::priority_queue<std::pair<weight_t, node_id_t> , std::vector<std::pair<weight_t, node_id_t>>, std::greater<std::pair<weight_t, node_id_t>>> prioNeighbours;
+    std::priority_queue<std::pair<weight_t, node_id_t> , std::vector<std::pair<weight_t, node_id_t>>, std::greater<>> adjacentVertices;
     std::map<node_id_t, bool> visited;
     std::map<node_id_t, std::pair<weight_t, bool>> labeled;
-    std::vector<std::pair<std::pair<node_id_t, weight_t>, node_id_t>> path; //Pair(current node, weight to it), previous node
+    std::map<node_id_t, node_id_t> reversePath;
 };
 
 #endif

@@ -1,8 +1,8 @@
 #include "graph.h"
 
-Graph::Graph(adjacency_list_t &list): list(list) {
+Graph::Graph(adjacency_list_t &list): list(list), INF(std::numeric_limits<double>::max()) {
     for(int y = 0; y < list.first.size(); y++) //Initializes the adjacency matrix
-        matrix.push_back(std::vector<double>(list.first.size(), std::numeric_limits<double>::max()));
+        matrix.push_back(std::vector<double>(list.first.size(), INF));
 
     for(auto &e: list.second) //Fills in the connections
         matrix[e.n1][e.n2] = e.weight;
@@ -34,21 +34,22 @@ void Graph::BFS(int startNode) {
     }
 }
 
-double Graph::shortestPath(int start, int end) { //Once every vertex is handled once, the extras are deleted since p_queue sorts them by lowest weight
+const double Graph::shortestPath(int start, int end) { //Once every vertex is handled once, the extras are deleted since p_queue sorts them by lowest weight
+    reversePath.clear();
     labeled.clear();
-    prioNeighbours.push({0, start});
+    adjacentVertices.push({0, start});
 
-    while(!prioNeighbours.empty()) {
-        auto node = prioNeighbours.top(); //Get next node
-        prioNeighbours.pop();
+    while(!adjacentVertices.empty()) {
+        auto node = adjacentVertices.top(); //Get next node
+        adjacentVertices.pop();
 
-        if(labeled[node.second].second) //Gets rid of node multiples in the p_queue if it's already been labeled
-            continue;
+        if(labeled[node.second].second) {continue;} //Gets rid of node multiples in the p_queue if it's already been labeled
 
         labeled[node.second] = {node.first, true}; //Marks node as finished labeled
         dijkstraNeighbours(node); //Gets adjacent nodes, with the weight to get there
     }
 
+    printPath(start, end);
     return labeled[end].first;
 }
 
@@ -69,13 +70,30 @@ void Graph::printVisitedNodes() const {
     std::cout << std::endl;
 }
 
+void Graph::printPath(int start, int end) {
+    std::cout << "Path from node " << start << " to node " << end << ": ";
+    std::vector<int> path;
+    path.push_back(end);
+    while(end != start) {
+        path.push_back(reversePath[end]);
+        end = reversePath[end];
+    }
+    std::reverse(path.begin(), path.end());
+    for(auto e: path) {
+        std::cout << e << "   ";
+    }
+    std::cout << std::endl;
+}
+
 void Graph::dijkstraNeighbours(std::pair<weight_t, node_id_t> node) {
     int nodeId = node.second;
     double nodeWeight = node.first;
     for(int adj = 0; adj < matrix[nodeId].size(); adj++) { //Goes through neighbours in the matrix
-        if(!labeled[adj].second) { //Neighbour isn't already labeled
-            double edgeWeight = matrix[nodeId][adj];
-            prioNeighbours.push({nodeWeight + edgeWeight, adj}); //Adds neighbour with nodeWeight + edgeWeight
+        double edgeWeight = matrix[nodeId][adj];
+        if(!labeled[adj].second && edgeWeight != INF) { //Neighbour isn't already labeled
+            adjacentVertices.push({nodeWeight + edgeWeight, adj}); //Adds neighbour with nodeWeight + edgeWeight
+
+            reversePath[adj] = nodeId;
         }
     }
 }
