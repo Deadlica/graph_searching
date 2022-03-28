@@ -53,10 +53,10 @@ RM = /home/samuel/clion-2021.2.3/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/samuel/Documents/c++/DT064G/labb
+CMAKE_SOURCE_DIR = /home/samuel/Documents/c++/DT064G/graph_searching
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/samuel/Documents/c++/DT064G/labb/cmake-build-debug
+CMAKE_BINARY_DIR = /home/samuel/Documents/c++/DT064G/graph_searching/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/labb.dir/depend.make
@@ -68,42 +68,42 @@ include CMakeFiles/labb.dir/flags.make
 
 CMakeFiles/labb.dir/main.cpp.o: CMakeFiles/labb.dir/flags.make
 CMakeFiles/labb.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/c++/DT064G/labb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/labb.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/labb.dir/main.cpp.o -c /home/samuel/Documents/c++/DT064G/labb/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/c++/DT064G/graph_searching/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/labb.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/labb.dir/main.cpp.o -c /home/samuel/Documents/c++/DT064G/graph_searching/main.cpp
 
 CMakeFiles/labb.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labb.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/c++/DT064G/labb/main.cpp > CMakeFiles/labb.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/c++/DT064G/graph_searching/main.cpp > CMakeFiles/labb.dir/main.cpp.i
 
 CMakeFiles/labb.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labb.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/c++/DT064G/labb/main.cpp -o CMakeFiles/labb.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/c++/DT064G/graph_searching/main.cpp -o CMakeFiles/labb.dir/main.cpp.s
 
 CMakeFiles/labb.dir/reader.cpp.o: CMakeFiles/labb.dir/flags.make
 CMakeFiles/labb.dir/reader.cpp.o: ../reader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/c++/DT064G/labb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/labb.dir/reader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/labb.dir/reader.cpp.o -c /home/samuel/Documents/c++/DT064G/labb/reader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/c++/DT064G/graph_searching/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/labb.dir/reader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/labb.dir/reader.cpp.o -c /home/samuel/Documents/c++/DT064G/graph_searching/reader.cpp
 
 CMakeFiles/labb.dir/reader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labb.dir/reader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/c++/DT064G/labb/reader.cpp > CMakeFiles/labb.dir/reader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/c++/DT064G/graph_searching/reader.cpp > CMakeFiles/labb.dir/reader.cpp.i
 
 CMakeFiles/labb.dir/reader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labb.dir/reader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/c++/DT064G/labb/reader.cpp -o CMakeFiles/labb.dir/reader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/c++/DT064G/graph_searching/reader.cpp -o CMakeFiles/labb.dir/reader.cpp.s
 
 CMakeFiles/labb.dir/graph.cpp.o: CMakeFiles/labb.dir/flags.make
 CMakeFiles/labb.dir/graph.cpp.o: ../graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/c++/DT064G/labb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/labb.dir/graph.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/labb.dir/graph.cpp.o -c /home/samuel/Documents/c++/DT064G/labb/graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/c++/DT064G/graph_searching/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/labb.dir/graph.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/labb.dir/graph.cpp.o -c /home/samuel/Documents/c++/DT064G/graph_searching/graph.cpp
 
 CMakeFiles/labb.dir/graph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/labb.dir/graph.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/c++/DT064G/labb/graph.cpp > CMakeFiles/labb.dir/graph.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/c++/DT064G/graph_searching/graph.cpp > CMakeFiles/labb.dir/graph.cpp.i
 
 CMakeFiles/labb.dir/graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/labb.dir/graph.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/c++/DT064G/labb/graph.cpp -o CMakeFiles/labb.dir/graph.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/c++/DT064G/graph_searching/graph.cpp -o CMakeFiles/labb.dir/graph.cpp.s
 
 # Object files for target labb
 labb_OBJECTS = \
@@ -119,7 +119,7 @@ labb: CMakeFiles/labb.dir/reader.cpp.o
 labb: CMakeFiles/labb.dir/graph.cpp.o
 labb: CMakeFiles/labb.dir/build.make
 labb: CMakeFiles/labb.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/samuel/Documents/c++/DT064G/labb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable labb"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/samuel/Documents/c++/DT064G/graph_searching/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable labb"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/labb.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -131,6 +131,6 @@ CMakeFiles/labb.dir/clean:
 .PHONY : CMakeFiles/labb.dir/clean
 
 CMakeFiles/labb.dir/depend:
-	cd /home/samuel/Documents/c++/DT064G/labb/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/samuel/Documents/c++/DT064G/labb /home/samuel/Documents/c++/DT064G/labb /home/samuel/Documents/c++/DT064G/labb/cmake-build-debug /home/samuel/Documents/c++/DT064G/labb/cmake-build-debug /home/samuel/Documents/c++/DT064G/labb/cmake-build-debug/CMakeFiles/labb.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/samuel/Documents/c++/DT064G/graph_searching/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/samuel/Documents/c++/DT064G/graph_searching /home/samuel/Documents/c++/DT064G/graph_searching /home/samuel/Documents/c++/DT064G/graph_searching/cmake-build-debug /home/samuel/Documents/c++/DT064G/graph_searching/cmake-build-debug /home/samuel/Documents/c++/DT064G/graph_searching/cmake-build-debug/CMakeFiles/labb.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/labb.dir/depend
 

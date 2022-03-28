@@ -13,7 +13,10 @@ int main() {
         graph.printVisitedNodes();
     }*/
 
-    std::cout << "Distance: " << graph.shortestPath(24, 37) << std::endl;
-    std::cout << "Distance: " << graph.shortestPath(46, 47) << std::endl;
-    std::cout << "Distance: " << graph.shortestPath(30, 19) << std::endl;
+    double dist1 = graph.shortestPath(24, 37);
+    std::cout << "Distance: " << dist1 << std::endl;
+    double dist2 = graph.shortestPath(46, 47);
+    std::cout << "Distance: "  << dist2 << std::endl;
+    double dist3 = graph.shortestPath(30, 19);
+    std::cout << "Distance: " << dist3 << std::endl;
 }

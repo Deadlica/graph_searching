@@ -1,4 +1,4 @@
-# Install script for directory: /home/samuel/Documents/c++/DT064G/labb
+# Install script for directory: /home/samuel/Documents/c++/DT064G/graph_searching
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/samuel/Documents/c++/DT064G/labb/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/samuel/Documents/c++/DT064G/graph_searching/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

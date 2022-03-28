@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/samuel/Documents/c++/DT064G/labb/graph.h
+/home/samuel/Documents/c++/DT064G/graph_searching/graph.h
 vector
 -
 iostream
@@ -22,15 +22,15 @@ queue
 limits
 -
 reader.h
-/home/samuel/Documents/c++/DT064G/labb/reader.h
+/home/samuel/Documents/c++/DT064G/graph_searching/reader.h
 
-/home/samuel/Documents/c++/DT064G/labb/main.cpp
+/home/samuel/Documents/c++/DT064G/graph_searching/main.cpp
 reader.h
-/home/samuel/Documents/c++/DT064G/labb/reader.h
+/home/samuel/Documents/c++/DT064G/graph_searching/reader.h
 graph.h
-/home/samuel/Documents/c++/DT064G/labb/graph.h
+/home/samuel/Documents/c++/DT064G/graph_searching/graph.h
 
-/home/samuel/Documents/c++/DT064G/labb/reader.h
+/home/samuel/Documents/c++/DT064G/graph_searching/reader.h
 istream
 -
 map

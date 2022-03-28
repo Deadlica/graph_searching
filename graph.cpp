@@ -80,7 +80,7 @@ void Graph::printPath(int start, int end) {
     }
     std::reverse(path.begin(), path.end());
     for(auto e: path) {
-        std::cout << e << "   ";
+        std::cout << e << "[" << list.first[e].substr(1) << "]" << "   ";
     }
     std::cout << std::endl;
 }
@@ -93,7 +93,7 @@ void Graph::dijkstraNeighbours(std::pair<weight_t, node_id_t> node) {
         if(!labeled[adj].second && edgeWeight != INF) { //Neighbour isn't already labeled
             adjacentVertices.push({nodeWeight + edgeWeight, adj}); //Adds neighbour with nodeWeight + edgeWeight
 
-            reversePath[adj] = nodeId;
+            reversePath[adj] = nodeId; //Tells the adjacent vertex which vertex it came from
         }
     }
 }

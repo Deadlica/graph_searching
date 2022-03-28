@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/samuel/Documents/c++/DT064G/labb/graph.cpp" "/home/samuel/Documents/c++/DT064G/labb/cmake-build-debug/CMakeFiles/labb.dir/graph.cpp.o"
-  "/home/samuel/Documents/c++/DT064G/labb/main.cpp" "/home/samuel/Documents/c++/DT064G/labb/cmake-build-debug/CMakeFiles/labb.dir/main.cpp.o"
-  "/home/samuel/Documents/c++/DT064G/labb/reader.cpp" "/home/samuel/Documents/c++/DT064G/labb/cmake-build-debug/CMakeFiles/labb.dir/reader.cpp.o"
+  "/home/samuel/Documents/c++/DT064G/graph_searching/graph.cpp" "/home/samuel/Documents/c++/DT064G/graph_searching/cmake-build-debug/CMakeFiles/labb.dir/graph.cpp.o"
+  "/home/samuel/Documents/c++/DT064G/graph_searching/main.cpp" "/home/samuel/Documents/c++/DT064G/graph_searching/cmake-build-debug/CMakeFiles/labb.dir/main.cpp.o"
+  "/home/samuel/Documents/c++/DT064G/graph_searching/reader.cpp" "/home/samuel/Documents/c++/DT064G/graph_searching/cmake-build-debug/CMakeFiles/labb.dir/reader.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
