@@ -14,5 +14,7 @@ int main() {
     }*/
 
     graph.print();
-    std::cout <<graph.shortestPath(0, 19) << std::endl;
+    std::cout << graph.shortestPath(24, 37) << std::endl;
+    std::cout << graph.shortestPath(46, 47) << std::endl;
+    std::cout << graph.shortestPath(30, 19) << std::endl;
 }

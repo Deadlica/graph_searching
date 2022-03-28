@@ -23,14 +23,10 @@ stack
 -
 queue
 -
+limits
+-
 reader.h
 /home/samuel/Documents/c++/DT064G/labb/reader.h
-
-/home/samuel/Documents/c++/DT064G/labb/main.cpp
-reader.h
-/home/samuel/Documents/c++/DT064G/labb/reader.h
-graph.h
-/home/samuel/Documents/c++/DT064G/labb/graph.h
 
 /home/samuel/Documents/c++/DT064G/labb/reader.h
 istream

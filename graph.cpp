@@ -1,17 +1,11 @@
 #include "graph.h"
 
 Graph::Graph(adjacency_list_t &list): list(list) {
-    for(int y = 0; y < list.first.size(); y++) {
-        std::vector<double> row;
-        for(int x = 0; x < list.first.size(); x++) {
-            row.push_back(0);
-        }
-        matrix.push_back(row);
-    }
+    for(int y = 0; y < list.first.size(); y++) //Initializes the adjacency matrix
+        matrix.push_back(std::vector<double>(list.first.size(), std::numeric_limits<double>::max()));
 
-    for(auto &e: list.second) {
+    for(auto &e: list.second) //Fills in the connections
         matrix[e.n1][e.n2] = e.weight;
-    }
 }
 
 void Graph::DFS(int startNode) {
@@ -21,9 +15,9 @@ void Graph::DFS(int startNode) {
     stackNeighbours.push(startNode);
     while(!stackNeighbours.empty()) {
         auto currentNode = stackNeighbours.top();
-        visited[currentNode] = true;
+        visited[currentNode] = true; //Marks as visited
         stackNeighbours.pop();
-        getNeighbours(currentNode, stackNeighbours);
+        getNeighbours(currentNode, stackNeighbours); //Gets neighbours
     }
 }
 
@@ -34,23 +28,27 @@ void Graph::BFS(int startNode) {
     queueNeighbours.push(startNode);
     while(!queueNeighbours.empty()) {
         auto currentNode = queueNeighbours.front();
-        visited[currentNode] = true;
+        visited[currentNode] = true; //Marks as visited
         queueNeighbours.pop();
-        getNeighbours(currentNode, queueNeighbours);
+        getNeighbours(currentNode, queueNeighbours); //Gets neighbours
     }
 }
 
-double Graph::shortestPath(int start, int end) {
+double Graph::shortestPath(int start, int end) { //Once every vertex is handled once, the extras are deleted since p_queue sorts them by lowest weight
+    labeled.clear();
     prioNeighbours.push({0, start});
+
     while(!prioNeighbours.empty()) {
-        auto currentNode = prioNeighbours.top();
+        auto node = prioNeighbours.top(); //Get next node
         prioNeighbours.pop();
-        dijkstraNeighbours(currentNode); //Adds adjacent nodes, the weight from start to them
-        labeled[currentNode.second] = {currentNode.first, true};
+
+        if(labeled[node.second].second) //Gets rid of node multiples in the p_queue if it's already been labeled
+            continue;
+
+        labeled[node.second] = {node.first, true}; //Marks node as finished labeled
+        dijkstraNeighbours(node); //Gets adjacent nodes, with the weight to get there
     }
-    /*for(auto e: labeled) {
-        std::cout << "Node: " << e.first << ", weight: " << e.second.first << std::endl;
-    }*/
+
     return labeled[end].first;
 }
 
@@ -72,10 +70,12 @@ void Graph::printVisitedNodes() const {
 }
 
 void Graph::dijkstraNeighbours(std::pair<weight_t, node_id_t> node) {
-    for(int i = 0; i < matrix[node.second].size(); i++) {
-        double neighbourWeight = matrix[node.second][i];
-        if(neighbourWeight && !labeled[i].second) {
-            prioNeighbours.push({node.first + neighbourWeight, i});
+    int nodeId = node.second;
+    double nodeWeight = node.first;
+    for(int adj = 0; adj < matrix[nodeId].size(); adj++) { //Goes through neighbours in the matrix
+        if(!labeled[adj].second) { //Neighbour isn't already labeled
+            double edgeWeight = matrix[nodeId][adj];
+            prioNeighbours.push({nodeWeight + edgeWeight, adj}); //Adds neighbour with nodeWeight + edgeWeight
         }
     }
 }

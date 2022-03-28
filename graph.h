@@ -7,6 +7,7 @@
 #include <map>
 #include <stack>
 #include <queue>
+#include <limits>
 #include "reader.h"
 
 #define NOT_CONNECTED 0
@@ -40,6 +41,7 @@ private:
     std::priority_queue<std::pair<weight_t, node_id_t> , std::vector<std::pair<weight_t, node_id_t>>, std::greater<std::pair<weight_t, node_id_t>>> prioNeighbours;
     std::map<node_id_t, bool> visited;
     std::map<node_id_t, std::pair<weight_t, bool>> labeled;
+    std::vector<std::pair<std::pair<node_id_t, weight_t>, node_id_t>> path; //Pair(current node, weight to it), previous node
 };
 
 #endif
