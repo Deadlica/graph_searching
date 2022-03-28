@@ -42,9 +42,7 @@ const double Graph::shortestPath(int start, int end) { //Once every vertex is ha
     while(!adjacentVertices.empty()) {
         auto node = adjacentVertices.top(); //Get next node
         adjacentVertices.pop();
-
         if(labeled[node.second].second) {continue;} //Gets rid of node multiples in the p_queue if it's already been labeled
-
         labeled[node.second] = {node.first, true}; //Marks node as finished labeled
         dijkstraNeighbours(node); //Gets adjacent nodes, with the weight to get there
     }
@@ -74,12 +72,12 @@ void Graph::printPath(int start, int end) {
     std::cout << "Path from node " << start << " to node " << end << ": ";
     std::vector<int> path;
     path.push_back(end);
-    while(end != start) {
+    while(end != start) { //Adds backwards path to vector
         path.push_back(reversePath[end]);
         end = reversePath[end];
     }
-    std::reverse(path.begin(), path.end());
-    for(auto e: path) {
+    std::reverse(path.begin(), path.end()); //Reverses vector
+    for(auto e: path) { //Prints path
         std::cout << e << "[" << list.first[e].substr(1) << "]" << "   ";
     }
     std::cout << std::endl;
@@ -92,7 +90,6 @@ void Graph::dijkstraNeighbours(std::pair<weight_t, node_id_t> node) {
         double edgeWeight = matrix[nodeId][adj];
         if(!labeled[adj].second && edgeWeight != INF) { //Neighbour isn't already labeled
             adjacentVertices.push({nodeWeight + edgeWeight, adj}); //Adds neighbour with nodeWeight + edgeWeight
-
             reversePath[adj] = nodeId; //Tells the adjacent vertex which vertex it came from
         }
     }

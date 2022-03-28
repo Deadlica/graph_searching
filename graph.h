@@ -32,6 +32,7 @@ private:
             }
         }
     }
+
     void dijkstraNeighbours(std::pair<weight_t, node_id_t>);
 
     const double INF;
